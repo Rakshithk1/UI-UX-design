@@ -1,0 +1,28 @@
+name: System Info Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  system-info-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Print system info
+      run: |
+        echo "📅 Date:"
+        date
+
+        echo "🖥️ System Info:"
+        uname -a
+
+        echo "📂 Current Directory:"
+        pwd
+
+        echo "✅ Done printing system info!"
+
